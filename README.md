@@ -6,7 +6,7 @@ The VPS definition will be stored as code directly in your repository.
 
 ![](cs-lightsail.png)
  
-# How to Deploy the SSR Hosting
+# How to Deploy the AWS Lightsail VPS instance
 
 You can deploy the AWS Lightsail VPS instance with CodeSmash [here](https://codesmash.studio/deploy).
  
