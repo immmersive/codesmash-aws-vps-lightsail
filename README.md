@@ -1,4 +1,4 @@
-# CodeSmash AWS Lightsail VPS
+# CodeSmash AWS VPS Lightsail
 
 This repository will be used as a template for deploying AWS Lightsail VPS instance with CodeSmash.
 You can the host standalone apps or containers on your instance.
@@ -13,7 +13,7 @@ You can deploy the AWS Lightsail VPS instance with CodeSmash [here](https://code
 # Module
 
 - ID: codesmash-aws-vps-lightsail
-- NAME: CodeSmash AWS Lightsail Terraform Module
+- NAME: CodeSmash AWS VPS Lightsail
 
 ## Resources Deployed
 
