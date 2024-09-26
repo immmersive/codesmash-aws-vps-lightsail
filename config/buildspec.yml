@@ -7,6 +7,9 @@ env:
     key: "$key"
     branch: "$branch"
     app_name: "$app_name"
+    availability_zone: "$availability_zone"
+    blueprint_id: "$blueprint_id"
+    bundle_id: "$bundle_id"
 
 phases:
   build:
