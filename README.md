@@ -3,6 +3,8 @@
 This repository will be used as a template for deploying AWS Lightsail VPS instance with CodeSmash.
 You can the host standalone apps or containers on your instance.
 The VPS definition will be stored as code directly in your repository.
+
+![](lightsail.png)
  
 # How to Deploy the SSR Hosting
 
