@@ -17,3 +17,7 @@ variable "blueprint_id" {
 variable "bundle_id" {
     default     = ""
 }
+
+variable "has_static_ip" {
+    default     = "false"
+}
