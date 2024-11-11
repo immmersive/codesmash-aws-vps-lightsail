@@ -21,3 +21,8 @@ variable "bundle_id" {
 variable "has_static_ip" {
     default     = "false"
 }
+
+variable "lb_instances" {
+    type =      list(string)
+    default     = []
+}
