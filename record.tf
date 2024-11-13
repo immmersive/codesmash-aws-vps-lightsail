@@ -4,7 +4,7 @@ resource "aws_route53_zone" "domain" {
 }
  
 resource "aws_route53_record" "distribution_record" {
-    depends_on = [aws_route53_zone.domain[0].zone_id]
+    depends_on = [aws_route53_zone.domain[0]]
 
     for_each    = var.domain != "" && length(var.subdomains) > 0 ? toset(var.subdomains) : toset([])
     zone_id     = aws_route53_zone.domain[0].zone_id
