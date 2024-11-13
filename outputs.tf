@@ -13,3 +13,11 @@ output "load_balancer_dns" {
 output "lb_instances" {
   value         = var.lb_instances
 }
+
+output "distribution_url" { 
+  value       = var.has_distribution == "true" ? aws_lightsail_distribution.distribution[0].domain_name : null
+}
+
+output "distribution_state" { 
+  value       = var.has_distribution == "true" ? aws_lightsail_distribution.distribution[0].status : null
+}
