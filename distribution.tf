@@ -35,6 +35,6 @@ resource "aws_lightsail_distribution" "distribution" {
     }
 
     lifecycle {
-        ignore_changes = [certificate_name]  
+        ignore_changes = [certificate_name, cache_behavior_settings]  
     }
-}
+} 
