@@ -28,7 +28,7 @@ variable "lb_instances" {
 }
 
 variable "has_distribution" {
-    default     = "true"
+    default     = "false"
 }
 
 variable "distribution_size" {
