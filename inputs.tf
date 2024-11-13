@@ -19,7 +19,7 @@ variable "bundle_id" {
 }
 
 variable "has_static_ip" {
-    default     = "false"
+    default     = "true"
 }
 
 variable "lb_instances" {
@@ -28,7 +28,7 @@ variable "lb_instances" {
 }
 
 variable "has_distribution" {
-    default     = "false"
+    default     = "true"
 }
 
 variable "distribution_size" {
@@ -37,4 +37,14 @@ variable "distribution_size" {
 
 variable "distribution_cache_behavior" {
     default     = "dont-cache"
+}
+
+variable "domain" {
+    type        = string
+    default     = ""
+}
+
+variable "subdomains" {
+    type =      list(string)
+    default     = []
 }
