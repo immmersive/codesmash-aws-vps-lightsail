@@ -15,6 +15,7 @@ env:
     has_distribution: "$has_distribution"
     distribution_size: "$distribution_size"
     distribution_cache_behavior: "$distribution_cache_behavior"
+    selected_app: "$selected_app"
 
 phases:
   build:
