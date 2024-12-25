@@ -15,6 +15,7 @@ env:
     has_distribution: "$has_distribution"
     distribution_size: "$distribution_size"
     distribution_cache_behavior: "$distribution_cache_behavior"
+    selected_app: "$selected_app"
 
 phases:
   build:
@@ -26,6 +27,7 @@ phases:
       - unzip terraform_1.5.5_linux_arm64.zip
       - chmod 755 terraform
       - cd ..
+      - [ ! -s "user_data.sh" ] && cat "images/${selected_app}.sh" > "user_data.sh"
       - printf 'yes' | app/terraform init -backend-config="bucket=$bucket" -backend-config="region=$region" -backend-config="key=$key"
       - app/terraform workspace list      
       - app/terraform workspace select $branch || app/terraform workspace new $branch
