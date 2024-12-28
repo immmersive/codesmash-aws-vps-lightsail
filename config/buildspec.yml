@@ -26,9 +26,8 @@ phases:
       - curl -o terraform_1.5.5_linux_arm64.zip https://releases.hashicorp.com/terraform/1.5.5/terraform_1.5.5_linux_arm64.zip
       - unzip terraform_1.5.5_linux_arm64.zip
       - chmod 755 terraform
-      - cd ..
-      - [ ! -s "user_data.sh" ] && cat "images/${selected_app}.sh" > "user_data.sh"
+      - cd .. 
       - printf 'yes' | app/terraform init -backend-config="bucket=$bucket" -backend-config="region=$region" -backend-config="key=$key"
       - app/terraform workspace list      
       - app/terraform workspace select $branch || app/terraform workspace new $branch
-      - app/terraform apply --auto-approve -var "app_name=$app_name" -var "region=$region" -var "availability_zone=$availability_zone" -var "blueprint_id=$blueprint_id" -var "bundle_id=$bundle_id" -var "has_static_ip=$has_static_ip" -var "lb_instances=$lb_instances" -var "has_distribution=$has_distribution" -var "distribution_size=$distribution_size" -var "distribution_cache_behavior=$distribution_cache_behavior"
+      - app/terraform apply --auto-approve -var "app_name=$app_name" -var "region=$region" -var "availability_zone=$availability_zone" -var "blueprint_id=$blueprint_id" -var "bundle_id=$bundle_id" -var "has_static_ip=$has_static_ip" -var "lb_instances=$lb_instances" -var "has_distribution=$has_distribution" -var "distribution_size=$distribution_size" -var "distribution_cache_behavior=$distribution_cache_behavior" -var "selected_app=$selected_app"
