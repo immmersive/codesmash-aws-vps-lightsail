@@ -41,7 +41,7 @@ resource "aws_lightsail_distribution" "distribution" {
 
 locals { 
     origin1 = aws_lightsail_instance.lightsail.name    
-    origin2 = aws_lightsail_lb.load_balancer[0].name   
+    origin2 = length(aws_lightsail_lb.load_balancer) > 0 ? aws_lightsail_lb.load_balancer[0].name : null
  
     selected_origin = var.has_static_ip == "true" ? local.origin1 : local.origin2
 }
