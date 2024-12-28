@@ -21,4 +21,4 @@ sudo mkdir -p /home/node/.n8n
 sudo chown -R 1000:1000 /home/node/.n8n
 
 # Run n8n on port 5678
-docker run -d --name n8n -p 5678:5678 -v /home/ubuntu/.n8n:/home/node/.n8n n8nio/n8n
+docker run -d --name n8n -p 80:80 -v /home/ubuntu/.n8n:/home/node/.n8n n8nio/n8n
