@@ -5,8 +5,8 @@ resource "aws_lightsail_distribution" "distribution" {
     bundle_id                = var.distribution_size
  
     origin {
-        name                 = aws_lightsail_instance.lightsail.name 
-        protocol_policy      = "http-only" 
+        name                 = local.selected_origin
+        protocol_policy      = "http-only"
         region_name          = var.region
     }
 
@@ -38,3 +38,10 @@ resource "aws_lightsail_distribution" "distribution" {
         ignore_changes = [certificate_name, cache_behavior_settings]  
     }
 } 
+
+locals { 
+    origin1 = aws_lightsail_instance.lightsail.name    
+    origin2 = aws_lightsail_lb.load_balancer[0].name   
+ 
+    selected_origin = var.has_static_ip == "true" ? local.origin1 : local.origin2
+}
