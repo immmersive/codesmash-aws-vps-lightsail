@@ -48,3 +48,13 @@ variable "subdomains" {
     type =      list(string)
     default     = []
 }
+
+variable "user_data" {
+    type        = string
+    default     = ""
+}
+
+variable "selected_app" {
+    type        = string
+    default     = ""
+}
