@@ -31,4 +31,4 @@ sh tools/deploy.sh
 # Launch the Docker Compose application with the project name 'activepieces'
 docker-compose -p activepieces up
 
-# Open anc access on port 8080
+# Open and access on port 8080
